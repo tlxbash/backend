@@ -66,15 +66,15 @@ WSGI_APPLICATION = 'wxcloudrun.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+    
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get("MYSQL_DATABASE", 'django_demo'),
-        'USER': os.environ.get("MYSQL_USERNAME"),
-        'HOST': os.environ.get("MYSQL_ADDRESS").split(':')[0],
-        'PORT': os.environ.get("MYSQL_ADDRESS").split(':')[1],
-        'PASSWORD': os.environ.get("MYSQL_PASSWORD"),
-        'OPTIONS': {'charset': 'utf8mb4'},
-    }
+        'ENGINE': 'django.db.backends.mysql',  # 改为MySQL引擎
+        'NAME': 'device_db',                 # 数据库名称
+        'USER': 'device_user',                 # 数据库用户名
+        'PASSWORD': '123',           # 数据库密码
+        'HOST': '162.14.100.3',                   # 数据库主机（本地）
+        'PORT': '3306',                        # 数据库端口（默认3306）
+    }    
 }
 
 # Password validation
